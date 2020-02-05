@@ -4,20 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script type="" src=""></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>プログラミング講座申し込み</title>
 </head>
 <body>
 <form method="POST" action="http://localhost/lesson_collatech/ContactForm/confirm.php">
-<!-- <input type="hidden" name="_token" value=> -->
-＊氏名<br>
-<input type= "text" name= "name" size="30" value=><br>
-＊電話番号<br>
-<input type= "text" name= "tel" size="30" value=><br>
-＊メールアドレス<br>
-<input type= "text" name= "mail" size="30" value=><br>
-＊都道府県<br>
-<select id="pref" type="pref" name="pref">
+
+    ＊氏名<br>
+    <input id= "name" name= "name" size="30" value=><br> 
+    <!-- <input type="hidden" name="name" value="" /> -->
+    ＊電話番号<br>
+    <input id= "tel" name= "tel" size="30" value=><br>
+    ＊メールアドレス<br>
+    <input id= "mail" name= "mail" size="30" value=><br>
+    ＊都道府県<br>
+    <select id="pref" type="pref" name="pref">
     <option value></option>
     <option value="">選択してください</option>
     <option value="北海道">北海道</option>
@@ -67,32 +68,21 @@
     <option value="宮崎県">宮崎県</option>
     <option value="鹿児島県">鹿児島県</option>
     <option value="沖縄県">沖縄県</option>
-</select>   
-<br>
-＊年齢<br>
-<input type= "text" name= "age" size="30" value=><br>
-＊備考欄<br>
-<textarea name= "message" cols="50" rows="5"></textarea>
-<br>
-<input type="checkbox" name="agree_flag" id="agree_flag" value="1" class="form-check-input">
-<label for="agree_flag" class="form-check-label">
-<a href="http://localhost/ContactForm/policy" target="_blank">利用規約</a>に同意する
-</label><br>
-<br>
-<br>
-<input type="submit" value="確認" id="confirm_btn"/>
+    </select>  
+    <br>
+    ＊年齢<br>
+    <input id= "age" name= "age" size="30" value=><br>
+    ＊備考欄<br>
+    <textarea name= "message" cols="50" rows="5"></textarea>
+    <br>
+    <input type="checkbox" name="agree_flag" id="agree_flag" value="1" class="form-check-input">
+    <label for="agree_flag" class="form-check-label">
+    <a href="http://localhost/ContactForm/policy" target="_blank">利用規約</a>に同意する
+    </label><br>
+    <br>
+    <br>
+    <input type="submit" value="確認" id="confirm_btn"/>
+</input>
 </form>
 </body>
 </html>
-<script>
-$(function)() {
-    $('#agree_flg').change(function() {
-        if(!$('#agree_flag')).prop('checked')) {
-
-        }
-    }
-
-
-}
-
-</script>

@@ -7,7 +7,7 @@
     <title>登録完了</title>
 </head>
 <body>
-<form action="confilm.php" method ="post">
+<form action="confirm.php" method ="post">
     <h3>登録結果表示</h3>
 </form>
 </body>
@@ -23,9 +23,9 @@ if (isset($_POST["name"], $_POST["tel"], $_POST["mail"], $_POST["pref"], $_POST[
 }
 // データベースに接続
 $pdo = new PDO(
-    'mysql:host=localhost;dbname=resavation;charset=utf8',
+    'mysql:host=localhost:3306;dbname=resavation;charset=utf8',
     'collatech',
-    'passeord',
+    'password',
     array(PDO::MYSQL_ATTR_INIT_COMMAND =>"SET CHARACTER SET'utf8'")
 );
 // データベースに繋がっているかどうか確認
@@ -44,13 +44,13 @@ $regist -> bindParam (':pref', $pref);
 $regist -> bindParam (':age', $age);
 $regist -> bindParam (':message', $message);
 
-$regist -> execute(array($name, $tel, $mail, $pref, $age, $message));
+$regist->execute();
 
 if ($regist) {
     echo "登録完了です";
-} else (
+} else {
     echo "登録エラーです";
-)
+}
 
 
 

@@ -8,36 +8,46 @@
 </head>
 <body>
 <h2>プログラム体験申込確認</h2>
-<form id="confirmForm" method="POST" action ="http://localhost/lesson_collatech/ContactForm/register.php">
-    <!-- <input type="hidden" name="_token" value=""> -->
-    <form action="entry.php" method ="post">
+<form method="POST" action ="http://localhost/lesson_collatech/ContactForm/register.php">
     <table>
     <tr>
      <td>氏名</td> 
-     <td><?php echo $_POST["name"]; ?></td>  
+     <td><?php echo $_POST["name"]; ?>  
+    <input id="name" type="hidden"  name="name" value=>
+     </td>
     </tr>
     <tr>
      <td>電話番号</td> 
-     <td><?php echo $_POST["tel"]; ?></td>  
+     <td><?php echo $_POST["tel"]; ?>
+    
+     </td>  
     </tr>
     <tr>
      <td>メールアドレス</td>
-     <td><?php echo $_POST["mail"]; ?></td>   
+     <td><?php echo $_POST["mail"]; ?> 
+     
+     </td>  
     </tr>
     <tr>
      <td>都道府県</td>
-     <td><?php echo $_POST["pref"]; ?></td>   
+     <td><?php echo $_POST["pref"]; ?> 
+     
+     </td>   
     </tr>
     <tr>
      <td>年齢</td>
-     <td><?php echo $_POST["age"]; ?></td>   
+     <td><?php echo $_POST["age"]; ?>
+    
+     </td>    
     </tr>
     <tr>
      <td>備考欄</td> 
-     <td><?php echo $_POST["message"]; ?></td>  
+     <td><?php echo $_POST["message"]; ?>
+     </td>   
     </tr>
     </table>
  <input type="submit" value="登録" />
+</input>
 </form>
 </body>
 </html>
