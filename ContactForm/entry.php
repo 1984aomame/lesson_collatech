@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="" src=""></script>
     <title>プログラミング講座申し込み</title>
 </head>
 <body>
@@ -79,19 +80,19 @@
 </label><br>
 <br>
 <br>
-<input type="submit" value="確認" />
+<input type="submit" value="確認" id="confirm_btn"/>
 </form>
 </body>
 </html>
-<?php
-/*
-＊氏名
-＊電話番号
-＊メールアドレス
-＊都道府県
-＊年齢
-＊備考欄
-＊利用規約に同意する
+<script>
+$(function)() {
+    $('#agree_flg').change(function() {
+        if(!$('#agree_flag')).prop('checked')) {
+
+        }
+    }
 
 
-*/
+}
+
+</script>
