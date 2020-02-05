@@ -7,7 +7,7 @@
     <title>プログラミング講座申し込み</title>
 </head>
 <body>
-<form method="POST" action="http://localhost/ContactForm/confirm.php">
+<form method="POST" action="http://localhost/lesson_collatech/ContactForm/confirm.php">
 <!-- <input type="hidden" name="_token" value=> -->
 ＊氏名<br>
 <input type= "text" name= "name" size="30" value=><br>

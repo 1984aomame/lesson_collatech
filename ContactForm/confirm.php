@@ -8,7 +8,7 @@
 </head>
 <body>
 <h2>プログラム体験申込確認</h2>
-<form id="confirmForm" method="POST" action ="http://localhost/ContactForm/register.php">
+<form id="confirmForm" method="POST" action ="http://localhost/lesson_collatech/ContactForm/register.php">
     <!-- <input type="hidden" name="_token" value=""> -->
     <form action="entry.php" method ="post">
     <table>
