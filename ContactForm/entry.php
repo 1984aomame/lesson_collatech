@@ -10,7 +10,8 @@
 <body>
 <form method="POST" action="http://localhost/lesson_collatech/ContactForm/confirm.php">
     ＊氏名<br>
-    <input type= "name" name= "name"  id="name" ><br> 
+    
+    <input id= "name" type= "name"  name="name"><br>
     ＊電話番号<br>
     <input type= "tel" name= "tel" size="30"><br>
     ＊メールアドレス<br>
@@ -73,13 +74,13 @@
     ＊備考欄<br>
     <textarea name= "message"  cols="50" rows="5" ></textarea>
      <br>
-    <input type="checkbox" name="agree_flag" id="agree_flag" value="1" class="form-check-input">
+    <input type="checkbox" name="agree_flag" id="agree_flag" >
     <label for="agree_flag" class="form-check-label">
-    <a href="http://localhost/ContactForm/policy" target="_blank">利用規約</a>に同意する
+    <a href="http://localhost/lesson_collatech/ContactForm/policy.php" target="_blank">利用規約</a>に同意する
     </label><br>
     <br>
     <br>
-    <input type="submit" value="確認" id="confirm_btn"/>
+    <input type="submit" value="確認"/>
 </input>
 </form>
 </body>

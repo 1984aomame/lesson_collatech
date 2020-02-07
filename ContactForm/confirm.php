@@ -12,37 +12,37 @@
         <table>
         <tr>
             <td>氏名</td> 
-            <td><?php echo $_POST["name"]; ?> 
-            <input id="name" type="hidden" value="<?php $_POST["name"]; ?>">
+            <td><?php echo $_POST['name']; ?> 
+            <input id="name" type="hidden" name="name" value="<?php echo $_POST['name']; ?>">
         </tr> 
         <tr>
             <td>電話番号</td> 
-            <td><?php echo $_POST["tel"]; ?>
-            <input id="tel" type="hidden" value="<?php $_POST["tel"]; ?> ">
+            <td><?php echo $_POST['tel']; ?>
+            <input id="tel" type="hidden" name="tel" value="<?php echo $_POST['tel']; ?>">
             </td>  
         </tr>
         <tr>
             <td>メールアドレス</td>
-            <td><?php echo $_POST["mail"]; ?>
-            <input id="mail" type="hidden" value="<?php $_POST["mail"]; ?>">
+            <td><?php echo $_POST['mail']; ?>
+            <input id="mail" type="hidden" name="mail" value="<?php echo  $_POST['mail']; ?>">
             </td>  
         </tr>
         <tr>
             <td>都道府県</td>
-            <td><?php echo $_POST["pref"]; ?>
-            <input id="pref" type="hidden" value="<?php $_POST["pref"]; ?>">
+            <td><?php echo $_POST['pref']; ?>
+            <input id="pref" type="hidden" name="pref" value="<?php echo $_POST['pref']; ?>">
             </td>   
         </tr>
         <tr>
             <td>年齢</td>
-            <td><?php echo $_POST["age"]; ?>
-            <input id="age" type="hidden" value="<?php $_POST["age"]; ?>">
+            <td><?php echo $_POST['age']; ?>
+            <input id="age" type="hidden" name="age" value="<?php echo $_POST['age']; ?>">
             </td>    
         </tr>
         <tr>
             <td>備考欄</td> 
-            <td><?php echo $_POST["message"]; ?>
-            <input id="message" type="hidden" value="<?php $_POST["message"];?>">
+            <td><?php echo $_POST['message']; ?>
+            <input id="message" type="hidden" name="message" value="<?php echo $_POST['message'];?>">
             </td>   
         </tr>
         </table>

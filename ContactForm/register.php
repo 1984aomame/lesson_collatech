@@ -1,15 +1,29 @@
 <?php
+if (isset( $_POST['name'] ) ) {
+    var_dump( $_POST['name'] );
+} else {
+    echo 'POSTデータ受け取り失敗';
+}
 // データベースに接続
 $pdo = new PDO(
     'mysql:host=localhost:3306;dbname=resavation;charset=utf8',
     'collatech',
     'password',
 );
+// ポストデータを変数に格納
+$name = $_POST['name'];
+$tel = $_POST['tel'];
+$mail = $_POST['mail'];
+$pref = $_POST['pref'];
+$age = $_POST['age'];
+$message = $_POST['message'];
+// resavationデータベースのstudentテーブルにデータを登録し変数に代入
+$stmt = $pdo-> prepare ("INSERT INTO student(name,mail,tel,pref,age,message)VALUES (:name, :mail, :tel, :pref, :age, :message)");
+$params = array(':name' => $name, ':mail' => $mail, ':tel' => $tel, ':pref' => $pref, ':age' => $age, ':message' => $message);
+$stmt -> execute($params); //SQL実行
 
-$stmt = $pdo-> prepare('select *from student where id =:id');
-$stmt->bindValue(':id',$_POST['id']);
-$stmt->execute();
-$records=$stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
 
 ?>
 
