@@ -7,7 +7,6 @@
     <title>プログラミング講座申し込み</title>
 </head>
 <body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
 <form method="POST" action="http://localhost/lesson_collatech/ContactForm/confirm.php">
     ＊氏名<br>
     
@@ -80,22 +79,17 @@
     </label><br>
     <br>
     <br>
-    <input type="submit" id ="submit" value="確認" disabled/>
-</input>
+    <input type="submit" id ="submit" value="確認" disabled/></input>
 </form>
 <script type="text/JavaScript">
-    $(function() {
-        // $('#submit').prop('disabled',true);
-
-
-        $('#agree_flag').on('click',function() {
-            if ($(this).prop('checked') == false) {
-                $('#submit').prop('disabled',true);
-            } else {
-                $('#submit').prop('disabled',false);
-            }
-        });
-    });
+    var target = document.getElementById("submit");
+    target.disabled = true;
+    var flag = document.getElementById("agree_flag");
+    flag.addEventListener("click",function() { 
+        if(flag.checked)[
+            target.disabled = false
+        ]
+    },false)
 </script>
 </body>
 </html>
