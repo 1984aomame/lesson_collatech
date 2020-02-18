@@ -11,7 +11,7 @@ $pdo = new PDO(
 
 
 // データベースより取得したデータを表示
-$query="SELECT * FROM post";
+$query="SELECT * FROM post ORDER BY time DESC";
 $res = $pdo->query($query);
 $data = $res->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -25,10 +25,18 @@ $data = $res->fetchAll(PDO::FETCH_ASSOC);
     
     <title>Aの記事内容</title>
 </head>
-<body
-<div class="Articles">
+</body>
+<?php foreach ($data as $key=> $value1) {
+   /*echo"<pre>";
+   var_dump($value1);
+    echo"</pre>";*/
+    echo $value1["no"]."<br>";
+
+}?>
+<div class="Articles_index">
+<h2><?php echo $data[0]['no']; ?></h2>
 <h2><?php echo $data[0]['title']; ?></h2> 
-<br>
+<hr>
 <p><?php echo $data[0]['content']; ?></p>
 </div>
 <div class=under-element>

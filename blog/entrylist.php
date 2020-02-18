@@ -23,19 +23,18 @@
         ?>
     
         <div class="Articles">
-        <a href="indexA.php"></a>
         <p><?php echo $usersdata[0]['name']; ?></p>
         <p><?php echo $usersdata[0]['age']."歳"; ?></p>
         <p><?php echo $usersdata[0]['comment']; ?></p>
-        <a href="article.php">Aさんの記事へ！</a>
+        <form action="index.php" method="get">
+        <a href="index.php?id=1">Aさんの記事へ！</a>
         </div>
 
         <div class="Articles">
-        <a href="indexB.php"></a>
         <p><?php echo $usersdata[1]['name']; ?></p>
         <p><?php echo $usersdata[1]['age']."歳"; ?></p>
         <p><?php echo $usersdata[1]['comment']; ?></p>
-        <a href="article.php">Bさんの記事へ！</a>
+        <a href="index.php?id=2">Bさんの記事へ！</a>
         </div>
         
         

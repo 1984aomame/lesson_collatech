@@ -7,7 +7,12 @@
     <title>Aさんの BLOG</title>
 </head>
 <body>
-<h1>Aのブログ記事一覧</h1>
+<?
+$id = $_GET['id'] ?? '';
+var_dump($id);?>
+
+
+<h1>ブログ記事一覧</h1>
 <?php
 //  DBに接続
 $pdo = new PDO(
@@ -17,27 +22,23 @@ $pdo = new PDO(
 );
 
 // データベースより取得したデータを表示
-$query="SELECT * FROM post ORDER BY time DESC";
+// $query="SELECT * FROM post ORDER BY time DESC";
+$query="SELECT * FROM post where author='Bさん'";
 $res = $pdo->query($query);
 $data = $res->fetchAll(PDO::FETCH_ASSOC);
 
-/*echo "<pre>";
-print_r($data);
-echo "</pre>";
-*/
-?>
-
-
-<?php
+// 記事内容をすべて表示
 foreach ($data as $value1) {?>
-    <div class="Articles">
-    <a href="article.php">
-   <?php echo $value1['title']."<br>";?></a>
+    <div class="Articles_index">
+    <?php echo $value1['no']."<br>";?>
+    <hr>
+   <?php echo $value1['title']."<br>";?>
     <hr> 
-    <?php echo $value1['content']."<br>";?>
+   <p><?php echo $value1['content']."<br>";?></p>
     <hr>
     <?php echo $value1['time']."<br>";?>
     <?php echo"<br>";?>
+    <a href="article.php">記事へ</a>
     </div>
     <div class=under-element>
 
