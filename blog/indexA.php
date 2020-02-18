@@ -27,34 +27,23 @@ echo "</pre>";
 */
 ?>
 
-<!-- <div class="Articles"> -->
+
 <?php
-foreach ($data as $key =>$value1) {
-     foreach ($value1 as $key2 =>$value2) {
-        echo "<p>";
-        echo $key2.PHP_EOL; 
-        echo"<p>";
-        
-     }
-}
-?>
+foreach ($data as $value1) {?>
+    <div class="Articles">
+    <a href="article.php">
+   <?php echo $value1['title']."<br>";?></a>
+    <hr> 
+    <?php echo $value1['content']."<br>";?>
+    <hr>
+    <?php echo $value1['time']."<br>";?>
+    <?php echo"<br>";?>
+    </div>
+    <div class=under-element>
 
+    
+<?php } ?>
 
-
-
-
-
-<div class="Articles">
-<a href="article.php"><?php echo $data[0]['title']; ?></a>
-    <p><?php echo $data[0]['content']; ?></p>
-    <p><?php echo $data[0]['time']; ?></p>
-</div>
-
-<div class="Articles">
-<a href="article.php"><?php echo $data[1]['title']; ?></a>
-    <p><?php echo $data[1]['content']; ?></p>
-    <p><?php echo $data[1]['time']; ?></p>
-</div>
 
 
 <div class="under-element">

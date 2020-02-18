@@ -8,20 +8,36 @@
 </head>
 <body>
  <h1>ブログ一覧</h1>
+ <?php
+/*DBに接続*/
+        $pdo = new PDO(
+            'mysql:host=localhost:3306;dbname=blog;charser=utf8',
+            'user',
+            'password'
+        );
 
- <div class="Articles">
- <p>Aさんの記事</P>
-<a href="index.php">記事一覧へ</a>  
-</div>
+        // データベースより取得したデータを表示
+        $query="SELECT * FROM users";
+        $res = $pdo->query($query);
+        $usersdata = $res->fetchAll(PDO::FETCH_ASSOC);
+        ?>
+    
+        <div class="Articles">
+        <a href="indexA.php"></a>
+        <p><?php echo $usersdata[0]['name']; ?></p>
+        <p><?php echo $usersdata[0]['age']."歳"; ?></p>
+        <p><?php echo $usersdata[0]['comment']; ?></p>
+        <a href="article.php">Aさんの記事へ！</a>
+        </div>
 
-<div class="Articles">
-<p>Bさんの記事</P>
-<a href="indexB.php">記事一覧へ</a> 
-</div>
-
-
-
-
-
+        <div class="Articles">
+        <a href="indexB.php"></a>
+        <p><?php echo $usersdata[1]['name']; ?></p>
+        <p><?php echo $usersdata[1]['age']."歳"; ?></p>
+        <p><?php echo $usersdata[1]['comment']; ?></p>
+        <a href="article.php">Bさんの記事へ！</a>
+        </div>
+        
+        
 </body>
 </html>
