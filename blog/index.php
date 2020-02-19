@@ -7,9 +7,21 @@
     <title>Aさんの BLOG</title>
 </head>
 <body>
-<?
+<?php
 $id = $_GET['id'] ?? '';
-var_dump($id);?>
+
+var_dump ($id);
+ 
+
+if ($id=="1") {
+    echo  "IDの値は１です";
+ } elseif ($id =="2") {
+     echo  "IDの値は２です";
+ }
+ 
+
+
+?>
 
 
 <h1>ブログ記事一覧</h1>
