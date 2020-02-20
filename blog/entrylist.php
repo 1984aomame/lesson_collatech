@@ -1,3 +1,16 @@
+<?php
+        /*DBに接続*/
+        $pdo = new PDO(
+            'mysql:host=localhost:3306;dbname=blog;charser=utf8',
+            'user',
+            'password'
+        );
+        // usersデータを表示
+        $query="SELECT * FROM users";
+        $res = $pdo->query($query);
+        $usersdata = $res->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,35 +21,22 @@
 </head>
 <body>
  <h1>ブログ一覧</h1>
- <?php
-/*DBに接続*/
-        $pdo = new PDO(
-            'mysql:host=localhost:3306;dbname=blog;charser=utf8',
-            'user',
-            'password'
-        );
+ <?php   foreach($usersdata as $user){?>
+            <div class="Articles_index">
+                <?php   echo $user['name']."<br>";?>
+                <hr>
+                <p>年齢：<?php echo $user['age'];?> 歳</p>
+                <p>ひとこと：<?php echo $user['comment']; ?></P>
+                <?php $id = $user['id'];
+                      $name = $user['name'] ;?>
+               <a href="index.php?id=<?php echo $id;?>"><?php echo $name."の記事へ"?></a>
+            </div>
+       <?php }?>
+                
 
-        // データベースより取得したデータを表示
-        $query="SELECT * FROM users";
-        $res = $pdo->query($query);
-        $usersdata = $res->fetchAll(PDO::FETCH_ASSOC);
-        ?>
-    
-        <div class="Articles">
-        <p><?php echo $usersdata[0]['name']; ?></p>
-        <p><?php echo $usersdata[0]['age']."歳"; ?></p>
-        <p><?php echo $usersdata[0]['comment']; ?></p>
-        <form action="index.php" method="get">
-        <a href="index.php?id=1">Aさんの記事へ！</a>
-        </div>
+       
 
-        <div class="Articles">
-        <p><?php echo $usersdata[1]['name']; ?></p>
-        <p><?php echo $usersdata[1]['age']."歳"; ?></p>
-        <p><?php echo $usersdata[1]['comment']; ?></p>
-        <a href="index.php?id=2">Bさんの記事へ！</a>
-        </div>
-        
+
         
 </body>
 </html>
